@@ -15,10 +15,8 @@ import java.util.Optional;
  * @version 1.0
  */
 @Repository
-public interface UserRepository extends CrudRepository<User,Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
     @Query("SELECT u FROM User u WHERE u.login = :login")
     Optional<UserDTO> findByLogin(String login);
-
-    Optional<UserDTO> findById(long id);
 }
